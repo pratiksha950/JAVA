@@ -1,3 +1,15 @@
+/* common code
+import java.util.*;
+public class main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+
+    }
+}
+*/
+
+
 // *************Sum of even and odd given by user**************
 // import java.util.*;
 // public class main {
@@ -216,3 +228,19 @@
 //         System.out.println(b);
 //     }
 // }
+
+
+// ***********table enter by user********
+import java.util.*;
+public class main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        
+        for(int i=2;i<=10;i++){
+            System.out.println(i*n);
+        }
+      
+
+    }
+}
