@@ -82,7 +82,7 @@ public class main {
 //         if(n<=1){
 //             isPrime=false;
 //         }else{
-//             for(int i=2;i<=n;i++){
+//             for(int i=2;i<=n/2;i++){
 //                 if(n %i ==0){
 //                     isPrime=false;
 //                 }
@@ -231,16 +231,30 @@ public class main {
 
 
 // ***********table enter by user********
-import java.util.*;
-public class main {
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
+// import java.util.*;
+// public class main {
+//     public static void main(String[] args) {
+//         Scanner sc=new Scanner(System.in);
+//         int n=sc.nextInt();
         
-        for(int i=2;i<=10;i++){
-            System.out.println(i*n);
-        }
+//         for(int i=2;i<=10;i++){
+//             System.out.println(i*n);
+//         }
       
 
-    }
-}
+//     }
+// }
+
+// import java.util.*;
+// public class main{
+//     public static void main(String[] args) {
+//         Scanner sc=new Scanner(System.in);
+//         int n=sc.nextInt();
+//         int i=0;
+//         while(i<=n){
+//             System.out.print(i);
+//               i++;
+//         }
+        
+//     }
+// }
