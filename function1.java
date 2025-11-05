@@ -178,34 +178,52 @@
 
 
 // *********range between 1 to 10 code for prime************
+// import java.util.*;
+// public class function1{
+//     public static boolean isPrime(int n) {
+//         boolean isPrime=true;
+//         if (n <= 1) {
+//         isPrime=false;
+//         return isPrime; 
+//         }
+//         for(int i=2;i<=Math.sqrt(n);i++){
+//             if(n%i==0){
+//                 isPrime=false;
+//                 break;
+//             }
+//         }
+//           return isPrime;
+//         }
+
+//         public static void primeRange(int n){
+//         for(int i=2;i<=n;i++){
+//         if(isPrime(i)){
+//             System.out.print(i+" ");
+//         }
+       
+//     }
+//     }
+//             public static void main(String[] args){
+//                 primeRange(20);
+//     }
+
+// }
+
+// ************Convert Binary to Decimal****************
 import java.util.*;
 public class function1{
-    public static boolean isPrime(int n) {
-        boolean isPrime=true;
-        if (n <= 1) {
-        isPrime=false;
-        return isPrime; 
+    public static void BinToDec(int n) {
+        int pow=0;
+        int dec=0;
+        while(n>0){
+            int lastDigit=n%10;
+            dec=dec+(lastDigit*(int)Math.pow(2,pow));
+            pow++;
+            n=n/10;
         }
-        for(int i=2;i<=Math.sqrt(n);i++){
-            if(n%i==0){
-                isPrime=false;
-                break;
-            }
-        }
-          return isPrime;
-        }
-
-        public static void primeRange(int n){
-        for(int i=2;i<=n;i++){
-        if(isPrime(i)){
-            System.out.print(i+" ");
-        }
-        System.out.println();
+        System.out.println(n+dec);
     }
+    public static void main(String[] args) {
+        BinToDec(101110);
     }
-            public static void main(String[] args){
-                primeRange(20);
-    }
-
 }
-
