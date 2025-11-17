@@ -283,3 +283,72 @@
 //        avg();
 //     }
 // }
+
+
+//****************** number is even or odd******************
+    // import java.util.*;
+    // public class function1 {
+    //     public static boolean isEven(int n){
+    //         if(n%2==0){
+    //             return true;
+    //         }else{
+    //             return false;
+    //         }
+    //     }
+    //     public static void main(String[] args) {
+    //         Scanner sc=new Scanner(System.in);
+    //         int n=sc.nextInt();
+    //         System.out.println(isEven(n));
+    //         if(isEven(n)){
+    //             System.out.println("Number is even");
+    //         }else{
+    //             System.out.println("Number is odd");
+    //         }
+
+    //     }
+    // }
+
+//    ****************** palindrome******************
+// import java.util.*;
+// public class function1 {
+//     public static boolean isPalindrome(int n) {
+//         int original=n;
+//         int rev=0;
+//         while(n>0){
+//             int last=n%10;
+//             rev=rev*10+last;
+//             n=n/10;
+//         }
+//      return original==rev;  
+//     }
+
+//     public static void main(String[] args) {
+//         Scanner sc=new Scanner(System.in);
+//         int num=sc.nextInt();
+//         sc.close();
+//          System.out.println(isPalindrome(num));
+//     }
+// }
+
+
+// *****************Write a Java method to compute the sum of the digits in an integer*****************
+
+import java.util.*;
+public class function1 {
+    public static int sumOfDigit(int n) {
+        int original=n;
+        int sumOfDigit=0;
+        while(n>0){
+            int last=n%10;
+            sumOfDigit=sumOfDigit+last;
+            n=n/10;
+        }
+        return sumOfDigit;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        System.out.println(sumOfDigit(n));
+    }
+}
