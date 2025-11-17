@@ -210,20 +210,76 @@
 // }
 
 // ************Convert Binary to Decimal****************
-import java.util.*;
-public class function1{
-    public static void BinToDec(int n) {
-        int pow=0;
-        int dec=0;
-        while(n>0){
-            int lastDigit=n%10;
-            dec=dec+(lastDigit*(int)Math.pow(2,pow));
-            pow++;
-            n=n/10;
-        }
-        System.out.println(n+dec);
-    }
-    public static void main(String[] args) {
-        BinToDec(101110);
-    }
-}
+// import java.util.*;
+// public class function1{
+//     public static void BinToDec(int n) {
+//         int pow=0;
+//         int dec=0;
+//         while(n>0){
+//             int lastDigit=n%10;
+//             dec=dec+(lastDigit*(int)Math.pow(2,pow));
+//             pow++;
+//             n=n/10;
+//         }
+//         System.out.println(dec);
+//     }
+//     public static void main(String[] args) {
+//         BinToDec(101110);
+//     }
+// }
+
+// ************Convert  Decimal  to  Binary****************
+// import java.util.*;
+// public class function1 {
+//     public static void decToBin(int n){
+//         int pow=0;
+//         int bin=0;
+//         while(n>0){
+//             int rem=n%2;
+//             bin=bin+(rem*(int)Math.pow(10,pow));
+//             pow++;
+//             n=n/2;
+//         }
+//          System.out.println(bin);
+
+// }
+// public static void main(String[] args){
+//     decToBin(15);
+// }
+//    }
+
+// **********compute the averageof three numbers..************
+
+// public class function1 {
+
+//     public static void avgNum(int x,int y,int z) {
+//         int avg=(x+y+z)/3;
+//         System.out.println(avg);
+//     }
+     
+   
+//     public static void main(String[] args) {
+//         avgNum(2,9,2);
+        
+//     }
+// }
+
+// **********compute the averageof three numbers..taking input from user************
+// import java.util.*;
+// public class function1 {
+//     public static void avg(){
+//         Scanner sc=new Scanner(System.in);
+//         System.out.println("enter first num");
+//         double x=sc.nextDouble();
+//         System.out.println("enter second num");
+//          double y=sc.nextDouble();
+//          System.out.println("enter third num");
+//          double z=sc.nextDouble();
+//          double avg=(x+y+z)/3;
+//           System.out.println(avg);
+//     }
+
+//     public static void main(String[] args) {
+//        avg();
+//     }
+// }
