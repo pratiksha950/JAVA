@@ -333,22 +333,22 @@
 
 // *****************Write a Java method to compute the sum of the digits in an integer*****************
 
-import java.util.*;
-public class function1 {
-    public static int sumOfDigit(int n) {
-        int original=n;
-        int sumOfDigit=0;
-        while(n>0){
-            int last=n%10;
-            sumOfDigit=sumOfDigit+last;
-            n=n/10;
-        }
-        return sumOfDigit;
-    }
+// import java.util.*;
+// public class function1 {
+//     public static int sumOfDigit(int n) {
+//         int original=n;
+//         int sumOfDigit=0;
+//         while(n>0){
+//             int last=n%10;
+//             sumOfDigit=sumOfDigit+last;
+//             n=n/10;
+//         }
+//         return sumOfDigit;
+//     }
 
-    public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        System.out.println(sumOfDigit(n));
-    }
-}
+//     public static void main(String[] args) {
+//         Scanner sc=new Scanner(System.in);
+//         int n=sc.nextInt();
+//         System.out.println(sumOfDigit(n));
+//     }
+// }
