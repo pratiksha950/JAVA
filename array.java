@@ -206,7 +206,7 @@
 //     }
 // }
 
-// *************Maximum subArray Sum*************
+// *************Maximum subArray Sum Brute Force*************
 // public class array{
 //     public static void  subArray(int value[]){
 //         int currSum=0;
@@ -237,7 +237,7 @@
 //     }
 // }
 
-// // *************Maximum subArray Prefix Sum*************
+// // *************Maximum subArray Prefix Sum=prefix[end]-prefix[start-1]*************
 // public class array{
 //     public static void  subArray(int value[]){
 //         int currSum=0;
@@ -302,17 +302,21 @@
 //         for(int i=1;i<height.length;i++){
 //             leftMax[i]=Math.max(height[i],leftMax[i-1]);
 //         }
+
 //         //calculate Right max boundary
 //         int[] RightMax=new int[height.length];
 //         RightMax[height.length-1]=height[height.length-1];
 //         for(int i=height.length-2;i>=0;i--){
 //             RightMax[i]=Math.max(height[i],RightMax[i+1]);
 //         }
+
 //         int trapedWater=0;
 //         //loop
 //         for(int i=0;i<height.length;i++){
 //             //waterlevel=min(left max boundary or Right max boundary)
+
 //             int waterlevel=Math.min(leftMax[i],RightMax[i]);
+
 //             //traped water=waterlevel-height
 //             trapedWater+=waterlevel-height[i];
 //         }
@@ -325,23 +329,25 @@
 // }
 
 // *************buying and selling stock*************
-public class array{
-    public static int Stock(int price[]){
-        int buyPrice=Integer.MAX_VALUE;
-        int maxProfit=0;
-        for(int i=0;i<price.length;i++){
-            if(buyPrice<price[i]){//profit
-                int profit=price[i]-buyPrice;//todays profit
-                maxProfit=Math.max(maxProfit,profit);//global profit
-            }else{
-                buyPrice=price[i];
-            }
-        }
-        return maxProfit;
+// public class array{
+//     public static int Stock(int price[]){
+//         int buyPrice=Integer.MAX_VALUE;
+//         int maxProfit=0;
+//         for(int i=0;i<price.length;i++){
+//             if(buyPrice<price[i]){//profit
+//                 int profit=price[i]-buyPrice;//todays profit
+//                 maxProfit=Math.max(maxProfit,profit);//global profit
+//             }else{
+//                 buyPrice=price[i];
+//             }
+//         }
+//         return maxProfit;
 
-    }
-    public static void main(String[] args){
-        int price[]={7,1,5,3,6,4};
-        System.out.println(Stock(price));
-    }
-}
+//     }
+//     public static void main(String[] args){
+//         int price[]={7,1,5,3,6,4};
+//         System.out.println(Stock(price));
+//     }
+// }
+
+
