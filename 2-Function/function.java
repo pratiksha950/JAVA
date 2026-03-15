@@ -1,16 +1,16 @@
 // import java.util.*;
-// public class function1{
-//     public static void hello() {
-//         System.out.print("hi");
+public class function{
+    public static void hello() {
+        System.out.print("hi");
         
-//     }
-//     public static void main(String[] args) {
-//         hello();
-//          hello();
-//          hello();
+    }
+    public static void main(String[] args) {
+        hello();
+         hello();
+         hello();
          
-//     }
-// }
+    }
+}
 
 // *********function parameter***********
 // import java.util.*;
