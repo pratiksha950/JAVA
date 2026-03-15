@@ -1,5 +1,4 @@
 // *************Reverse an array*************
-import java.util.*;
 public class ReverseArray {
     public static int swap(int nums[]) {
         int first=0,last=nums.length-1;

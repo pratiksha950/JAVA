@@ -1,5 +1,4 @@
 // *************Binary Search*************
-import java.util.*;
 public class BinarySearch {
     public static int BinarySearchDemo(int nums[],int key){
         int start=0,end=nums.length-1;
