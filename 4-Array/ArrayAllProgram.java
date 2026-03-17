@@ -109,7 +109,7 @@ public class ArrayAllProgram {
 
 //     public static void Subarray(int nums[]){
 //         int ts=0;
-//         for(int i=1;i<nums.length;i++){
+//         for(int i=0;i<nums.length;i++){
 //             int start=i;
 //             for(int j=i;j<nums.length;j++){
 //                 int end=j;
@@ -179,7 +179,7 @@ public class ArrayAllProgram {
 //             int start=i;
 //             for(int j=i;j<value.length;j++){
 //                 int end=j;
-//                 currSum=start==0?prefix[end]:prefix[end]-prefix[start-1];
+//                 currSum=(start==0?prefix[end]:prefix[end]-prefix[start-1]);
 //                 System.out.print("Subarray: ");
 //                  System.out.println(" => Sum = " + currSum);
 //                 if(maxSum<currSum){
