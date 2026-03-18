@@ -1,7 +1,7 @@
 // ******************Diamond pattern******************
 public class DiamondPattern {
     
-    public static void DiamondPattern(int n){
+    public static void Diamondpattern(int n){
         //1st half
         for(int i=1;i<=n;i++){
             //spaces
@@ -30,6 +30,6 @@ public class DiamondPattern {
 
     }
     public static void main(String[] args) {
-        DiamondPattern(4);
+        Diamondpattern(4);
     }
 }
