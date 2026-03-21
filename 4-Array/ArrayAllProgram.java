@@ -6,27 +6,27 @@
 
 
 // ****************Taking input in an array*************
-import java.util.*;
-public class ArrayAllProgram {
-    public static void main(String[] args) {
-        int marks[]=new int[50];
-        // int num[]={1,2,3,4};
-        // String name[]={"om","sai"};
-        Scanner sc=new Scanner(System.in);
-        marks[0]=sc.nextInt();
-        marks[1]=sc.nextInt();
-        marks[2]=sc.nextInt();
+// import java.util.*;
+// public class ArrayAllProgram {
+//     public static void main(String[] args) {
+//         int marks[]=new int[50];
+//         // int num[]={1,2,3,4};
+//         // String name[]={"om","sai"};
+//         Scanner sc=new Scanner(System.in);
+//         marks[0]=sc.nextInt();
+//         marks[1]=sc.nextInt();
+//         marks[2]=sc.nextInt();
 
-        System.out.println("chem:"+marks[0]);
-        System.out.println("phy:"+marks[1]);
-        System.out.println("math:"+marks[2]);
-        marks[2]=100;
-        System.out.println("math:"+marks[2]);
-        int percentage=(marks[0]+marks[1]+marks[2])/3;
-        System.out.println("percentage is :"+percentage);
-        System.out.println("marks.length is ="+marks.length);
-    }
-}
+//         System.out.println("chem:"+marks[0]);
+//         System.out.println("phy:"+marks[1]);
+//         System.out.println("math:"+marks[2]);
+//         marks[2]=100;
+//         System.out.println("math:"+marks[2]);
+//         int percentage=(marks[0]+marks[1]+marks[2])/3;
+//         System.out.println("percentage is :"+percentage);
+//         System.out.println("marks.length is ="+marks.length);
+//     }
+// }
 
 
 // *************passing array as referance*************
