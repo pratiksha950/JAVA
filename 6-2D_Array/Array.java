@@ -60,8 +60,7 @@
 // }
 
 // ******Spiral Matrix code*******
-// import java.util.*;
-// public class Array {
+//   public class Array {
 //     public static void Search(int matrix[][]) {
 //         int startrow=0;
 //         int endrow=matrix.length-1;
@@ -106,21 +105,51 @@
 
 
 // ***Digonal Sum***
-import java.util.*;
-public class Array {
-    public static int Digonal(int matrix[][]) {
-        int sum=0;
-        for(int i=0;i<matrix.length;i++){         
-            sum+=matrix[i][i];
-            if(i!=matrix.length-1-i){
-                sum+=matrix[i][matrix.length-1-i];
-            }
-        }
-        return sum;
-    }
-    public static void main(String[] args) {
-       int matrix[][]={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
-       int res=Digonal(matrix);
-       System.out.println(res);
-}
-}
+// import java.util.*;
+// public class Array {
+//     public static int Digonal(int matrix[][]) {
+//         int sum=0;
+//         for(int i=0;i<matrix.length;i++){         
+//             sum+=matrix[i][i];
+//             if(i!=matrix.length-1-i){
+//                 sum+=matrix[i][matrix.length-1-i];
+//             }
+//         }
+//         return sum;
+//     }
+//     public static void main(String[] args) {
+//        int matrix[][]={{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+//        int res=Digonal(matrix);
+//        System.out.println(res);
+// }
+// }
+
+// ***Search in sorted Matrix***
+// public class Array {
+//     public static boolean Search(int matrix[][],int key) {
+//         int row=0;
+//         int col=matrix[0].length-1;
+//         while(row<matrix.length && col>=0){
+//             if(matrix[row][col]==key){
+//                 System.out.println("Key is at index ("+row+","+col+")");
+//                 return true;
+//             }
+//             else if(key<matrix[row][col]){
+//                 col--;
+//             }else{
+//                 row++;
+//             }
+//         }
+//           System.out.println("key not found");
+//             return false;
+//     }
+//     public static void main(String[] args) {
+//        int matrix[][]={ {1,2,3,4},
+//                         {5,6,7,8},
+//                         {9,10,11,12},
+//                         {13,14,15,16}};
+//        int key=0;
+//       Search(matrix,key);
+// }
+// }
+
