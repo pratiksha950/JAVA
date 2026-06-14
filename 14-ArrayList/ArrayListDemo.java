@@ -59,25 +59,50 @@ public class ArrayListDemo {
 */
 
 //###Find max value
+// import java.util.ArrayList;
+// public class ArrayListDemo {
+//     public static void main(String[] args) {
+//         ArrayList<Integer> list=new ArrayList<>();
+//         list.add(8);
+//         list.add(99);
+//         list.add(3);
+//         list.add(4);
+//         System.out.println(list);
+//         int max=Integer.MIN_VALUE;
+//         for(int i=0;i<list.size();i++){
+//             // if(list.get(i)>max){
+//             //     max=list.get(i);
+//             // }  
+//             //Or
+//             max=Math.max(max,list.get(i));
+//         }
+        
+//         System.out.println(max);
+// }
+// }
+
+//###swap the number
 import java.util.ArrayList;
 public class ArrayListDemo {
+    public static void SwapNum(ArrayList<Integer> list,int idx1,int idx2) {
+        int temp=list.get(idx1);
+        list.set(idx1,list.get(idx2));
+        list.set(idx2,temp);
+    }
     public static void main(String[] args) {
         ArrayList<Integer> list=new ArrayList<>();
-        list.add(8);
-        list.add(99);
+        list.add(1);
+        list.add(2);
         list.add(3);
         list.add(4);
-        System.out.println("before reverse"+ list);
-        int max=Integer.MIN_VALUE;
-        for(int i=0;i<list.size();i++){
-            // if(list.get(i)>max){
-            //     max=list.get(i);
-            // }  
-            //Or
-            max=Math.max(max,list.get(i));
-        }
+        list.add(5);
         
-        System.out.println(max);
+        
+        int idx1=1;
+        int idx2=3;
+        System.out.println("before swap"+ list);
+        SwapNum(list,idx1,idx2);
+        System.out.println("after swap" +list);
 }
 }
 
