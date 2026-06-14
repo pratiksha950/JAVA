@@ -1,4 +1,3 @@
-
 /*###import java.util.ArrayList;
 public class ArrayListDemo {
     public static void main(String[] args) {
@@ -39,6 +38,7 @@ public class ArrayListDemo {
     }
 }
 } */
+
 //###Reverse an array
 /*import java.util.ArrayList;
 public class ArrayListDemo {
@@ -57,6 +57,7 @@ public class ArrayListDemo {
 }
 }
  */
+
 //###Find max value
 // import java.util.ArrayList;
 // public class ArrayListDemo {
@@ -78,6 +79,7 @@ public class ArrayListDemo {
 //         System.out.println(max);
 // }
 // }
+
 //###swap the number
 /*import java.util.ArrayList;
 public class ArrayListDemo {
@@ -102,6 +104,7 @@ public class ArrayListDemo {
         System.out.println("after swap" +list);
 }
 }*/
+
 //###Sorting
 /*import java.util.ArrayList;
 import java.util.Collections;
@@ -129,6 +132,7 @@ public class ArrayListDemo {
 
     }
 }*/
+
 //###Multidimentional arraylist
 /*import java.util.ArrayList;
 public class ArrayListDemo {
@@ -162,11 +166,11 @@ public class ArrayListDemo {
         }
     }
 }*/
-//###Multidimentional arraylist
+
+//###Brute Force
 //For given n lines on the x-axis, use 2 lines to form a container such that it holds maximum water.
 //height = [1,8,6,2,5,4,8,3,7]
-
-import java.util.ArrayList;
+/*import java.util.ArrayList;
 public class ArrayListDemo {
     public static int StoreWater(ArrayList<Integer> list) {
         int maxWater = 0;
@@ -194,4 +198,40 @@ public class ArrayListDemo {
         list.add(7); 
         System.out.print(StoreWater(list));
     }
+}*/
+
+//###Using Two-Pointer Method
+import java.util.ArrayList;
+public class ArrayListDemo {
+    public static int StoreWater(ArrayList<Integer> list) {
+        int maxWater = 0;
+        int lp=0;
+        int rp=list.size()-1;
+        while(lp<rp){
+            int height=Math.min(list.get(lp),list.get(rp));
+            int width=rp-lp;
+            int currWater=height*width;
+            maxWater=Math.max(maxWater,currWater);
+            if(list.get(lp) < list.get(rp)){
+                lp++;
+            }else{
+                rp--;
+            }
+        }
+       return maxWater;
+    }
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();//height
+        list.add(1);
+        list.add(8);
+        list.add(6);
+        list.add(2);
+        list.add(5);
+        list.add(4);
+        list.add(8);
+        list.add(3);
+        list.add(7); 
+        System.out.print(StoreWater(list));
+    }
 }
+
