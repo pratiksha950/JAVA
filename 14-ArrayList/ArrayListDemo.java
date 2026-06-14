@@ -203,7 +203,7 @@ public class ArrayListDemo {
 //###Using Two-Pointer Method O(n)
 /*import java.util.ArrayList;
 public class ArrayListDemo {
-    public static int StoreWater(ArrayList<Integer> list) {
+    public static int TwoSum(ArrayList<Integer> list) {
         int maxWater = 0;
         int lp=0;
         int rp=list.size()-1;
@@ -231,7 +231,7 @@ public class ArrayListDemo {
         list.add(8);
         list.add(3);
         list.add(7); 
-        System.out.print(StoreWater(list));
+        System.out.print(TwoSum(list));
     }
 }*/
 
@@ -240,7 +240,7 @@ Find if any pair in a Sorted ArrayList has a target sum.
 list = [1, 2, 3, 4, 5, 6],target = 5
 import java.util.ArrayList;
 public class ArrayListDemo {
-    public static boolean StoreWater(ArrayList<Integer> list ,int target) {
+    public static boolean TwoSum(ArrayList<Integer> list ,int target) {
        for(int i=0;i<list.size();i++){
         for(int j=i+1;j<list.size();j++){
             if((list.get(i)+list.get(j))==target){
@@ -260,7 +260,7 @@ public class ArrayListDemo {
         list.add(6);
         list.add(8);
         int target=5;
-        System.out.print(StoreWater(list,target));
+        System.out.print(TwoSum(list,target));
     }
 }*/
 
@@ -269,7 +269,7 @@ Find if any pair in a Sorted ArrayList has a target sum.
 list = [1, 2, 3, 4, 5, 6],target = 5
 import java.util.ArrayList;
 public class ArrayListDemo {
-    public static boolean StoreWater(ArrayList<Integer> list ,int target) {
+    public static boolean TwoSum(ArrayList<Integer> list ,int target) {
         int lp=0;
         int rp=list.size()-1;
         while(lp<rp){
@@ -297,45 +297,54 @@ public class ArrayListDemo {
         list.add(8);
         
         int target=5;
-        System.out.print(StoreWater(list,target));
+        System.out.print(TwoSum(list,target));
     }
 }*/
 
 
-/*Two sum problem Using Two Pointer
-Find if any pair in a Sorted ArrayList has a target sum.
-list = [1, 2, 3, 4, 5, 6],target = 5 */
+/*Two sum-2 
+Given a sorted and rotated ArrayList and a target value, determine whether there exists any pair of elements whose sum is equal to the target sum.
+list = [11, 15, 6, 8, 9, 10]
+target = 16 */
 import java.util.ArrayList;
 public class ArrayListDemo {
-    public static boolean StoreWater(ArrayList<Integer> list ,int target) {
-        int lp=0;
-        int rp=list.size()-1;
-        while(lp<rp){
-            if(list.get(lp)+list.get(rp)==target){
+    public static boolean TwoSum(ArrayList<Integer> list ,int target) {
+       int bp=-1;//breaking point
+       int n=list.size();
+       for(int i=0;i<list.size()-1;i++){
+        if(list.get(i)>list.get(i+1)){
+            bp=i;
+            break;
+        }
+    }
+     int lp=bp+1;
+        int rp=bp;
+
+        while(lp!=rp){
+            if((list.get(lp)+list.get(rp))==target){
                 return true;
             }
-
-             if(list.get(lp)+list.get(rp)<target){
-                lp++;;
-            }else{
-                rp--;
-            }
+            if((list.get(lp)+list.get(rp))<target){
+                lp=(lp+1)%n;
+        }else{
+            rp=(n+rp-1)%n;
         }
-        return false;
+       }
+       return false;
        }
       
     public static void main(String[] args) {
         ArrayList<Integer> list = new ArrayList<>();//height
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        list.add(4);
-        list.add(5);
+        list.add(11 );
+        list.add(15);
         list.add(6);
         list.add(8);
+        list.add(9);
+        list.add(10);
+  
         
-        int target=5;
-        System.out.print(StoreWater(list,target));
+        int target=21;
+        System.out.print(TwoSum(list,target));
     }
 }
 
