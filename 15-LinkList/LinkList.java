@@ -223,11 +223,57 @@ public class LinkList {
         return;
     }
 
+    //check palindrome or not
+    //slow-fast approch
+    public Node Findmid(Node head){
+        Node slow=head;
+        Node fast=head;
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;//slow is mid
+    }
+   
+   
+    public boolean isPalindrom(){
+        if(head==null || head.next==null){
+            return true;
+        }
+         //1st step-find mid
+         Node MidNode = Findmid(head);
+
+        //2nd step-reverse 2nd half
+        Node prev=null;
+        Node next;
+        Node curr=MidNode;
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+
+        Node right=prev;//right half head
+        Node left=head;
+
+        //3rs step -check left and right half are same are not
+        while(right!=null){
+            if(left.data != right.data){
+                return false;
+
+            }
+            left=left.next;
+            right=right.next;
+        }
+        return true;
+    }
+
        public static void main(String[] args) {
         LinkList ll = new LinkList();
         ll.addFirst((2));
         ll.addFirst((1));
-        ll.addLast(4);
+        ll.addLast(2);
         ll.addLast(5);
         ll.add(2,3);
         ll.print();
@@ -242,11 +288,14 @@ public class LinkList {
         ll.reverse();
         ll.print();
 
-        ll.addLast(1);
-        ll.addLast(0);
-        ll.print();
-        ll.DeleteNthFromEnd(2);
-        ll.print();
+        // ll.addLast(1);
+        // ll.addLast(3);
+        // ll.print();
+        // ll.DeleteNthFromEnd(2);
+        // ll.print();
+
+        System.out.print(ll.isPalindrom());
+
     }
 }
 
