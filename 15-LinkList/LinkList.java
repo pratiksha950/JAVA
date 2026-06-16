@@ -198,10 +198,30 @@ public class LinkList {
             curr=next;  
         }
         head=prev;
-        
     }
 
-
+    //delete nth node from backword or from last
+    public void DeleteNthFromEnd(int n){
+        int size=0;
+        Node temp=head;
+        while(temp!=null){
+            temp=temp.next;
+            size++;
+        }
+        if(n==size){
+            head=head.next;//remove first
+            return;
+        }
+        int i=1;
+        int iToFind=size-n;
+        Node prev=head;
+        while(i<iToFind){
+            prev=prev.next;
+            i++;
+        }
+        prev.next=prev.next.next;
+        return;
+    }
 
        public static void main(String[] args) {
         LinkList ll = new LinkList();
@@ -220,6 +240,12 @@ public class LinkList {
         System.out.println(ll.size);
 
         ll.reverse();
+        ll.print();
+
+        ll.addLast(1);
+        ll.addLast(0);
+        ll.print();
+        ll.DeleteNthFromEnd(2);
         ll.print();
     }
 }
