@@ -185,6 +185,22 @@ public class LinkList {
         return val; 
     }
 
+    //reverse a link list
+    public void reverse(){
+        Node prev=null;
+        Node curr=tail=head;
+        Node next;
+
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;  
+        }
+        head=prev;
+        
+    }
+
 
 
        public static void main(String[] args) {
@@ -202,6 +218,9 @@ public class LinkList {
         ll.removeLast();
         ll.print();
         System.out.println(ll.size);
+
+        ll.reverse();
+        ll.print();
     }
 }
 
