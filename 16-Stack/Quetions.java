@@ -36,10 +36,10 @@ Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',
 An input string is valid if:
 Open brackets must be closed by the same type of brackets.
 Open brackets must be closed in the correct order.
-Every close bracket has a corresponding open bracket of the same type. */
+Every close bracket has a corresponding open bracket of the same type.
+
 
 import java.util.Stack;
-
 public class Quetions {
     public static boolean isValid(String str){
         Stack<Character> s =new Stack<>(); 
@@ -58,7 +58,7 @@ public class Quetions {
                    (s.peek()== '[' && ch == ']')) {
 
                     s.pop();
-                    
+
                   }else{
                     return false;
                   }
@@ -73,5 +73,50 @@ public class Quetions {
     public static void main(String[] args) {
         String str="{[()]}";
         System.out.println(isValid(str));
+}
+} */
+
+/*Duplicate Parentheses
+Given a balanced expression, find if it contains duplicate parentheses or not. A set of parentheses are duplicate if the same subexpression is surrounded by multiple parentheses.
+Return true if it contains duplicates else return false.
+Examples
+(((a + (b))) + (c + d)) → true
+((((a) + (b)) + c + d)) → true
+((a + b) + (c + d)) → false
+(((a + b)) + c) → true */
+
+import java.util.Stack;
+public class Quetions {
+    
+    public static boolean isDuplicate(String str){
+        Stack<Character> s =new Stack<>(); 
+
+        for(int i=0; i<str.length() ;i++){
+            char ch =str.charAt(i);
+            //opening , operator ,operands
+            
+            //closing
+            if(ch == ')'){
+                int count = 0;
+                while(s.peek() != '('){
+                    s.pop();
+                    count++;
+                }  
+                if(count < 1){
+                    return true; //duplicate
+                }else{
+                    s.pop();
+                }
+            }else{
+                s.push(ch);
+            }
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+        String str="((a+b))";
+        String str2="(a-b)";
+        System.out.println(isDuplicate(str2));
+        System.out.println(isDuplicate(str));
 }
 }
