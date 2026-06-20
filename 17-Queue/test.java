@@ -141,8 +141,7 @@ public class test {
     }
 }*/
 
-/*###Queue using linkedlist */
-
+/*###Queue using linkedlist
 import java.util.*;
 public class test{
     public static class Node{
@@ -194,10 +193,27 @@ public class test{
             }
             return head.data;
         }
-
     }
     public static void main(String[] args) {
          Queue q = new Queue();
+        q.add(1);
+        q.add(2);
+        q.add(3);
+      
+
+        while (!q.isEmpty()) {
+            System.out.print(q.peek() + " ");
+            q.remove();
+        }
+    }
+} */
+
+/*###Queue using linkedlist using java collection framework */
+import java.util.*;
+public class test{
+    
+    public static void main(String[] args) {
+        Queue<Integer> q =new LinkedList<>();//can used arraydequeue
         q.add(1);
         q.add(2);
         q.add(3);
