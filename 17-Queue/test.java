@@ -280,7 +280,7 @@ public class test {
         }
     }
 } */
- /*###Stack using Two Queue */
+ /*###Stack using Two Queue 
 import java.util.*;
 
 public class test {
@@ -363,5 +363,34 @@ public class test {
             System.out.println(s.peek());
             s.pop();
         }
+    }
+}*/
+
+/*###First non reapeating letter */
+import java.util.*;
+public class test {
+    public static void printNonReapeating(String str){
+        int freq[] = new int[26]; //'a' to 'z'
+        Queue<Character> q = new LinkedList<>();
+        for(int i=0; i<str.length(); i++){
+            char ch = str.charAt(i);
+            q.add(ch);
+            freq[ch - 'a']++;
+            while(!q.isEmpty() && freq[q.peek()-'a'] > 1){
+                q.remove();
+            }
+            if(q.isEmpty()){
+                System.out.print(-1 + " ");
+            }else{
+                System.out.print(q.peek() + " ");  
+            }
+        }
+        System.out.println();
+
+    }
+
+    public static void main(String[] args) {
+        String str = "aabccxb";
+         printNonReapeating(str);
     }
 }
