@@ -430,7 +430,7 @@ public class test {
     }
 }*/
 
-/*Queue reversal*/
+/*### Queue reversal
 import java.util.*;
 public class test{
     public static void reverse(Queue<Integer> q){
@@ -455,5 +455,49 @@ public class test{
             System.out.print(q.remove() + " ");
         }
         System.out.println();
+    }
+}*/
+
+/*### Deque 
+import java.util.*;
+public class test {
+    public static void main(String[] args) {
+        Deque<Integer> d = new LinkedList<>();
+        d.addFirst(1);
+        d.addFirst(2);
+        d.addFirst(3);
+        System.out.println(d);
+        d.removeLast();
+        System.out.println(d);
+        System.out.println("First Element : "+ d.getFirst());
+        System.out.println("Last Element : "+ d.getLast());
+    }
+}*/
+
+/*### Stack using Deque */
+import java.util.*;
+
+public class test {
+    public static class Stack{
+        Deque<Integer> d = new LinkedList<>();
+        public void push(int data){
+            d.addLast(data);
+        }
+        public int pop(){
+            return d.removeLast();
+        }
+        public int peek(){
+            return d.getLast();
+        }
+    }
+    public static void main(String[] args) {
+        Stack s = new Stack();
+        s.push(1);
+        s.push(2);
+        s.push(3);
+        System.out.println("peek = " + s.peek());
+        System.out.println(s.pop());
+        System.out.println(s.pop());
+        System.out.println(s.pop());
     }
 }
