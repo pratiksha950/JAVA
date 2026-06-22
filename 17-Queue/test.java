@@ -522,7 +522,5 @@ public class test {
         System.out.println(q.remove());
         System.out.println(q.remove());
       
-        
-
     }
 }
