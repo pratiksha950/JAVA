@@ -280,7 +280,7 @@ public class test {
         }
     }
 } */
- /*###Stack using Two Queue 
+ /*### Stack using Two Queue 
 import java.util.*;
 
 public class test {
@@ -366,7 +366,7 @@ public class test {
     }
 }*/
 
-/*###First non reapeating letter 
+/*### First non reapeating letter 
 import java.util.*;
 public class test {
     public static void printNonReapeating(String str){
@@ -394,8 +394,8 @@ public class test {
          printNonReapeating(str);
     }
 }*/
-    
-/*Interleaves 2 halves of a queue O(n) */
+
+/*### Interleaves 2 halves of a queue O(n) 
 import java.util.*;
 public class test {
     public static void interLeave(Queue<Integer> q){
@@ -423,6 +423,34 @@ public class test {
         q.add(9);
         q.add(10);
         interLeave(q);
+        while(!q.isEmpty()){
+            System.out.print(q.remove() + " ");
+        }
+        System.out.println();
+    }
+}*/
+
+/*Queue reversal*/
+import java.util.*;
+public class test{
+    public static void reverse(Queue<Integer> q){
+        Stack<Integer> s = new Stack<>();
+        while(!q.isEmpty()){
+            s.push(q.remove());
+        }
+        while(!s.isEmpty()){
+            q.add(s.pop());
+        }
+    }
+    public static void main(String[] args) {
+        Queue<Integer> q = new LinkedList<>();
+        q.add(1);
+        q.add(2);
+        q.add(3);
+        q.add(4);
+        q.add(5);
+
+        reverse(q);
         while(!q.isEmpty()){
             System.out.print(q.remove() + " ");
         }
