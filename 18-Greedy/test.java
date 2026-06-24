@@ -32,9 +32,9 @@ public class test {
          System.out.println();
      }  
 }
-*/
+ */
 
-/* ### Same Quetion if Activities are not sorted
+ /* ### Same Quetion if Activities are not sorted
 import java.util.*;
 public class test {
      public static void main(String[] args) {
@@ -78,7 +78,7 @@ public class test {
      }  
 }*/
 
-/*Fractional Knapsack
+ /*Fractional Knapsack
 Given the weights and values of N items, put these items in a knapsack of capacity W to get the maximum total value in the knapsack.
 value = [60, 100, 120]
 weight = [10, 20, 30]
@@ -120,7 +120,7 @@ public class test{
     }
 } */
 
-/*Min Absolute Difference Pairs
+ /*Min Absolute Difference Pairs
 Given two arrays A and B of equal length n. Pair each element of array A to an element in array B, such that sum S of absolute differences of all the pairs is minimum.
 A = [1, 2, 3]
 B = [2, 1, 3] 
@@ -143,7 +143,7 @@ public class test {
     }
 }*/
 
-/*Max Length Chain of Pairs
+ /*Max Length Chain of Pairs
 You are given n pairs of numbers. In every pair, the first number is always smaller than the second number. A pair (c, d) can come after pair (a, b) if b < c.
 Find the longest chain which can be formed from a given set of pairs.
 pairs =
@@ -171,7 +171,7 @@ public class test{
     }
 }*/
 
-/*Indian Coins
+ /*Indian Coins
 We are given an infinite supply of denominations [1, 2, 5, 10, 20, 50, 100, 500, 2000].
 Find the minimum number of coins/notes required to make change for a value V.
 Example 1
@@ -209,7 +209,7 @@ public class test{
     }
 } */
 
-/*Job Sequencing Problem
+ /*Job Sequencing Problem
 Given an array of jobs where every job has a deadline and profit if the job is finished before the deadline. It is also given that every job takes a single unit of time, so the minimum possible deadline for any job is 1.Maximize the total profit if only one job can be scheduled at a time.
 Jobs
 | Job | Deadline | Profit |
@@ -218,7 +218,7 @@ Jobs
 | B   | 1        | 10     |
 | C   | 1        | 40     |
 | D   | 1        | 30     |
- */
+
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -259,5 +259,56 @@ public class test{
             System.out.print(seq.get(i)+" ");
         }
         System.out.println();
+    }
+} */
+
+ /*Chocolate Problem
+We are given a bar of chocolate composed of m × n square pieces. One should break the chocolate into single squares. Each break of a part of the chocolate is charged a cost expressed by a positive integer. This cost does not depend on the size of the part that is being broken but only depends on the line the break goes along.
+Let us denote the costs of breaking along consecutive vertical lines with x₁, x₂, ..., xₘ₋₁ and along horizontal lines with y₁, y₂, ..., yₙ₋₁.
+Compute the minimal cost of breaking the whole chocolate into single squares. */
+import java.util.Arrays;
+import java.util.Collections;
+
+public class test {
+
+    public static void main(String[] args) {
+        int n = 4;
+        int m = 6;
+        Integer costVer[] = {2, 1, 3, 1, 4};//m-1
+        Integer costHor[] = {4, 1, 2};//n-1
+        Arrays.sort(costVer, Collections.reverseOrder());
+        Arrays.sort(costHor, Collections.reverseOrder());
+
+        int h = 0, v = 0;
+        int hp = 1, vp = 1;
+        int cost = 0;
+
+        while (h < costHor.length && v < costVer.length) {
+            //vertical cost < hor cost
+            if (costVer[v] <= costHor[h]) { //horizontal cut
+                cost += (costHor[h] * vp);
+                hp++;
+                h++;
+
+            } else {
+                cost += (costVer[v] * hp);
+                vp++;
+                v++;
+            }
+            }
+            while (h < costHor.length) {
+                cost += (costHor[h] * vp);
+                hp++;
+                h++;
+            }
+
+            while (v < costVer.length) {
+                cost += (costVer[v] * hp);
+                vp++;
+                v++;
+            }
+
+            System.out.println("min cost of cut is = "+ cost);
+        
     }
 }
