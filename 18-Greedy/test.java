@@ -83,7 +83,6 @@ Given the weights and values of N items, put these items in a knapsack of capaci
 value = [60, 100, 120]
 weight = [10, 20, 30]
 W = 50
- */
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -119,5 +118,27 @@ public class test{
         }
         System.out.println("finalVal = " + finalVal);
     }
-}
+} */
 
+/*Min Absolute Difference Pairs
+Given two arrays A and B of equal length n. Pair each element of array A to an element in array B, such that sum S of absolute differences of all the pairs is minimum.
+A = [1, 2, 3]
+B = [2, 1, 3] */
+
+import java.util.Arrays;
+public class test {
+
+    public static void main(String[] args) {
+        int A[] = {1,2,3};
+        int B[]= {2,1,3};
+        Arrays.sort(A);
+        Arrays.sort(B);
+
+        int MinAbsDiff= 0;
+
+        for(int i=0 ; i<A.length ;i++){
+            MinAbsDiff += Math.abs(A[i]-B[i]);
+        }
+        System.out.println("min absolue differnce in pair is = " + MinAbsDiff );
+    }
+}
