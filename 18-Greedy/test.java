@@ -151,7 +151,7 @@ pairs =
 (39, 60)
 (5, 28)
 (27, 40)
-(50, 90) */
+(50, 90) 
 import java.util.Arrays;
 import java.util.Comparator;
 public class test{
@@ -168,5 +168,43 @@ public class test{
             }
         }
         System.out.println("max length of chain is = " + chainLen );
+    }
+}*/
+
+/*Indian Coins
+We are given an infinite supply of denominations [1, 2, 5, 10, 20, 50, 100, 500, 2000].
+Find the minimum number of coins/notes required to make change for a value V.
+Example 1
+V = 121
+Output: 3
+Example 2
+V = 590 */
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+public class test{
+    public static void main(String[] args) {
+        Integer coins[]={1, 2, 5, 10, 20, 50, 100, 500, 2000};
+        Arrays.sort(coins , Comparator.reverseOrder());
+        int countOfCoin = 0;
+        int amount = 102;
+        ArrayList<Integer> ans = new ArrayList<>();
+
+        for(int i=0 ;i<coins.length ;i++){
+            if(coins[i] <= amount){
+                while(coins[i] <= amount){
+                    countOfCoin++;
+                    ans.add(coins[i]);
+                    amount -= coins[i];
+                }
+            }
+        }
+        System.out.println("total coins used in are : " + countOfCoin);
+
+        for(int i=0 ; i<ans.size() ;i++){
+             System.out.print(ans.get(i)+ " ");
+        }
+        System.out.println();
     }
 }
