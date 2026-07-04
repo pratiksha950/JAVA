@@ -431,7 +431,7 @@ public static void printPath(ArrayList<Integer> path){
 }*/
 
 
-/*### check is valid bst or not*/
+/*### check is valid bst or not
 public class Test {
 
     public static class Node{
@@ -513,7 +513,65 @@ public class Test {
         }
        
     }
+}*/
+
+/*### Mirror of bst*/
+public class Test {
+
+    public static class Node{
+        int data;
+        Node left;
+        Node right;
+
+        Node(int data){
+            this.data = data;
+            this.left = null;
+            this.right = null;
+        }
+    }
+
+    public static Node createMirror(Node root){
+        if(root == null){
+            return null;
+        }
+
+        Node leftSubtree = createMirror(root.left);
+        Node rightSubtree = createMirror(root.right);
+
+        root.left = rightSubtree;
+        root.right = leftSubtree;
+
+        return root;
+    }
+
+    public static void preOrder(Node root){
+        if(root == null){
+            return;
+        }
+        System.out.print(root.data + " ");
+        preOrder(root.left);
+        preOrder(root.right);
+    }
+ 
+
+
+    public static void main(String[] args) {
+        
+        Node root = new Node(8);
+
+        root.left = new Node(5);
+        root.right = new Node(10);
+
+        root.left.left = new Node(3);
+        root.left.right = new Node(6);
+
+        root.right.right = new Node(11);
+       
+       root = createMirror(root);
+       preOrder(root);
+    }
 }
+
 
 
 
