@@ -45,7 +45,7 @@ public class Bst2 {
     }
 } */
 
-/*### BST to find balanced BST */
+/*### BST to find balanced BST
 import java.util.*;
 public class Bst2 {
      public static class Node{
@@ -121,7 +121,83 @@ public class Bst2 {
         root = balancedBst(root);
         preOrder(root);
     }
+} */
+
+/*### Size of largest BST */
+public class Bst2 {
+     public static class Node{
+        int data;
+        Node left;
+        Node right;
+
+        Node(int data){
+            this.data = data;
+            this.left = null;
+            this.right = null;
+        }
+    }
+
+
+    static class Info{
+        boolean isBst;
+        int size;
+        int max;
+        int min;
+
+        Info(boolean isBst ,int min , int max , int size){
+            this.isBst = isBst;
+            this.size = size;
+            this.max = max;
+            this.min = min;
+        }
+    }
+    
+    public static int maxBST = 0;
+
+    public static Info largestBst(Node root){
+        if(root == null){
+            return new Info(true , Integer.MAX_VALUE , Integer.MIN_VALUE , 0);
+        }
+        Info leftInfo = largestBst(root.left);
+        Info rightInfo = largestBst(root.right);
+
+        int size = leftInfo.size + rightInfo.size + 1;
+
+        int min = Math.min(root.data , Math.min(leftInfo.min , rightInfo.min));
+        int max = Math.max(root.data , Math.max(leftInfo.max , rightInfo.max));
+
+        if(root.data <= leftInfo.max || root.data >= rightInfo.min){
+            return new Info(false , min , max ,size);
+        }
+
+        if(leftInfo.isBst && rightInfo.isBst){
+            maxBST = Math.max(maxBST , size);
+            return new Info(true  , min , max ,size);
+        }
+
+        return new Info(false ,min ,max ,size );
+    }
+
+   
+    public static void main(String[] args) {
+       Node root = new Node(50);
+
+        root.left = new Node(30);
+        root.left.left = new Node(5);
+        root.left.right = new Node(20);
+            
+        root.right = new Node(60);
+        root.right.left = new Node(45);
+        root.right.right = new Node(70);
+        root.right.right.left = new Node(65);
+
+        Info info = largestBst(root);
+        System.out.print("Largest bst size = " + maxBST);
+        
+       
+    }
 }
+
 
 
 
